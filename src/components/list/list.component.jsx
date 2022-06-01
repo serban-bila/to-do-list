@@ -12,9 +12,9 @@ const List = () => {
 
     return( 
         <div>
-            <ul className='list-container'>
+            <div className='list-container'>
               {toDoList.map((el) => {
-                return (<li onClick={() => {
+                return (<span onClick={() => {
                 if(el.isChecked === false){
                     dispatch(check(el.title))
                     return;
@@ -22,9 +22,9 @@ const List = () => {
                     dispatch(unCheck(el.title));
 
                 btnClass === false ? setBtnClass(true) : setBtnClass(false);
-                }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >{el.title}</li>)
+                }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >{el.title}</span>)
               })}
-          </ul>
+          </div>
         </div>
     );
 };
