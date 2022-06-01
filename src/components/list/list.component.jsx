@@ -1,4 +1,4 @@
-import './list.styles.css';
+import './list.styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
 import {check, unCheck} from '../../features/list/listSlice';
 import { useState } from 'react';
@@ -11,8 +11,8 @@ const List = () => {
 
 
     return( 
-        <div className='list-container'>
-            <ul>
+        <div>
+            <ul className='list-container'>
               {toDoList.map((el) => {
                 return (<li onClick={() => {
                 if(el.isChecked === false){
@@ -22,7 +22,7 @@ const List = () => {
                     dispatch(unCheck(el.title));
 
                 btnClass === false ? setBtnClass(true) : setBtnClass(false);
-                }} className={el.isChecked === true? "clicked" : "unclicked" } >{el.title}</li>)
+                }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >{el.title}</li>)
               })}
           </ul>
         </div>

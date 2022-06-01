@@ -1,4 +1,4 @@
-import './input.styles.css';
+import './input.styles.scss';
 import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { addActivity } from '../../features/list/listSlice';
@@ -11,11 +11,12 @@ const Input = () => {
 
     return (
         <div className="input-container">
-                <input type="text" placeholder="type to-do activity" onChange={(e) => setInput(e.target.value)} value=      {inputVal}/>   
-                <button onClick={() => {
-                    dispatch(addActivity(input));
-                    setInputVal()
-                }} type='submit'>Add activity</button>
+            <h1 className='title'>To-do List</h1>
+            <input className='input' type="text" placeholder="type to-do activity" onChange={(e) => setInput(e.target.value)} value=      {inputVal}/>   
+            <button className='add-button' onClick={() => {
+                dispatch(addActivity(input));
+                setInputVal()
+            }} type='submit'>Add activity</button>
         </div>
     );
 };

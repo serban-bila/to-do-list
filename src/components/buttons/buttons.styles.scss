@@ -1,0 +1,19 @@
+
+.button-container {
+    display: block;
+    margin: 0 auto;
+    width:fit-content;
+
+    .btn {
+        border-radius: 2em;
+        margin: 2em;
+        padding: 1em;
+        font-weight:500;
+    }
+}
+
+
+.clear-button {
+    background-color: rgb(211, 64, 64);
+    font-weight: bold;
+}

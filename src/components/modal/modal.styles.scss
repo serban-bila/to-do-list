@@ -1,0 +1,44 @@
+.modal-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.modal {
+    background: #fff2e2;
+    width: 80vw;
+    max-width: 400px;
+    border:  4px solid #251e14;
+    border-radius: 10px;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.modal h3 {
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+.modal .clear,
+.modal .close {
+    margin-top: 1rem;
+    border:  2px solid #251e14;
+    border-radius: 2em;
+    height: 2em;
+}
+
+.clear {
+    background-color: rgb(211, 64, 64);
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-around;
+}
