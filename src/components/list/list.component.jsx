@@ -7,7 +7,7 @@ import { useState } from 'react';
 const List = () => {
     const { toDoList } = useSelector((state) => state.list);
     const [ showCompleted, setShowCompleted ] = useState(false);
-    const [ showIncomplete, setShowIncomplete ] = useState(false);
+    const [ showIncomplete, setShowIncomplete ] = useState(true);
 
     const dispatch = useDispatch();  
 
