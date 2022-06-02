@@ -1,4 +1,36 @@
 
+.button-container {
+    display: block;
+    margin: 0 auto;
+    width:fit-content;
+
+    .btn {
+        border-radius: 2em;
+        margin-right: 1em;
+        padding: 0.5em;
+        font-weight:300;
+        color: black;
+    }
+}
+
+
+.clear-button {
+    background-color: rgb(211, 64, 64);
+    font-weight: bold;
+    
+}
+
+@media screen and (min-width: 768px) {
+    .button-container {
+        .btn {
+            margin: 2em;
+            padding: 1em;
+            font-weight:500;
+        }
+    }
+}
+
+
 .input-container{
     display: block;
     margin: 0 auto;
@@ -23,6 +55,8 @@
         margin: 1.5rem auto;
         border: 2px solid #251e14;
         border-radius: 2em;
+        color: black;
     }
     
 }
+

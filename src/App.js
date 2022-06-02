@@ -1,6 +1,6 @@
 import Input from './components/input/input.component';
 import List from './components/list/list.component';
-import Buttons from './components/buttons/buttons.component';
+// import Buttons from './components/buttons/buttons.component';
 import Modal from './components/modal/modal.component';
 
 import './App.css';
@@ -14,7 +14,7 @@ function App () {
       {isOpen &&
             <Modal />}
       <Input />
-      <Buttons />
+      {/* <Buttons /> */}
       <List />
     </div>
   );

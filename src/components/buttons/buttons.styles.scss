@@ -9,6 +9,7 @@
         margin-right: 1em;
         padding: 0.5em;
         font-weight:300;
+        color: black;
     }
 }
 
@@ -21,12 +22,7 @@
 
 @media screen and (min-width: 768px) {
     .button-container {
-        display: block;
-        margin: 0 auto;
-        width:fit-content;
-    
         .btn {
-            border-radius: 2em;
             margin: 2em;
             padding: 1em;
             font-weight:500;
