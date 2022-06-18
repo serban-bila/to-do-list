@@ -18,7 +18,6 @@ const List = () => {
             <button className='btn all-button' onClick={() => {setShowCompleted(true); setShowIncomplete(true)}}>ALL</button>
             <button className='btn completed-button' onClick={() => { setShowCompleted(true); setShowIncomplete(false)}}>COMPLETED</button>
             <button className='btn incompleted-button' onClick={() => {setShowCompleted(false); setShowIncomplete(true)}}>INCOMPLETED</button>
-            <hr />
         </div>
         <div className='list-container'>
             {showIncomplete &&

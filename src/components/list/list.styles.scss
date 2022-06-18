@@ -22,6 +22,12 @@
     }
 }
 
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    max-width: 800px; 
+}
+
 .clicked {
     background-color: #506843;
 }
