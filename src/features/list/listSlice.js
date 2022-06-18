@@ -17,7 +17,6 @@ const listSlice = createSlice({
             const listItem= state.toDoList.filter((item) => 
             item.title === action.payload)
             listItem.map((e) => e.isChecked = true);
-
         },
         unCheck: (state, action) => {
             const listItem= state.toDoList.filter((item) => 
@@ -27,9 +26,14 @@ const listSlice = createSlice({
         clearList: (state) => {
             state.toDoList = [];
         },
+        deleteListItem: (state, action) => {
+            const listItems = state.toDoList.filter((item) => 
+            item.title !== action.payload)
+            state.toDoList = listItems;
+        },
     },
 });
 
-export const { addActivity, check, unCheck, clearList } = listSlice.actions;
+export const { addActivity, check, unCheck, clearList, deleteListItem } = listSlice.actions;
 
 export default listSlice.reducer;

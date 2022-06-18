@@ -1,6 +1,6 @@
 import './list.styles.scss';
 import { useDispatch, useSelector } from 'react-redux';
-import {check, unCheck} from '../../features/list/listSlice';
+import {check, unCheck, deleteListItem} from '../../features/list/listSlice';
 import { open } from '../../features/modal/modalSlice';
 import { useState } from 'react';
 
@@ -10,7 +10,6 @@ const List = () => {
     const [ showIncomplete, setShowIncomplete ] = useState(true);
 
     const dispatch = useDispatch();  
-
 
     return( 
         <div>
@@ -25,25 +24,31 @@ const List = () => {
             {showIncomplete &&
                 toDoList.map((el) => {
                     if(el.isChecked === false)
-                    return (<span onClick={() => {
+                    return (<div onClick={() => {
                         if(el.isChecked === false){
                             dispatch(check(el.title))
                             return;
                         } else
                         dispatch(unCheck(el.title));
-                    }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >{el.title}</span>)
+                    }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >
+                        <span>{el.title}</span>
+                        <span onClick={() => dispatch(deleteListItem(el.title))}>&#10006;</span>
+                        </div>)
                 })
             }
             {showCompleted &&
                 toDoList.map((el) => {
                     if(el.isChecked === true)
-                    return (<span onClick={() => {
+                    return (<div onClick={() => {
                         if(el.isChecked === false){
                             dispatch(check(el.title))
                             return;
                         } else
                         dispatch(unCheck(el.title));
-                    }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >{el.title}</span>)
+                    }} className={ el.isChecked === true? "list-element clicked" : "list-element unclicked" } >
+                        <span>{el.title}</span>
+                        <span onClick={() => dispatch(deleteListItem(el.title))}>&#10006;</span>
+                        </div>)
                 })
             }
           </div>
