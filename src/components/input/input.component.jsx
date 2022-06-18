@@ -13,6 +13,17 @@ const Input = () => {
     const dispatch = useDispatch();
     const { currentUser, displayName } = useSelector((state) => state.user);
 
+    const handleInput = () => {
+        setInputVal('');
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch(addActivity(input));
+        handleInput();
+        createUserData();
+    }
+
     return (
         <div className="input-container">
             {currentUser ? (
@@ -21,15 +32,13 @@ const Input = () => {
                 <span className='sign' onClick={() => {signInWithGooglePopup()}}>SIGN IN</span>
             )}
             {currentUser && (
-                <span className='username'>logged in as:  {displayName}</span>
+                <span className='username'>logged in as: {displayName}</span>
             )}
             <h1 className='title'>One At A Time</h1>
-            <input className='input' type="text" placeholder="type to-do activity" onChange={(e) => setInput(e.target.value)} value=      {inputVal}/>   
-            <button className='add-button' onClick={() => {
-                dispatch(addActivity(input));
-                setInputVal();
-                createUserData();
-            }} type='submit'>Add activity</button>
+            <form onSubmit={handleSubmit}>
+                <input className='input' type="text" placeholder="type to-do activity" onChange={(e) => {setInput(e.target.value); setInputVal(e.target.value)}} value={inputVal}/>   
+                <button className='add-button' type='submit'>Add activity</button>
+            </form>
         </div>
     );
 };
